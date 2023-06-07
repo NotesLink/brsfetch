@@ -1,8 +1,11 @@
 const express = require('express');
+const cors = require('cors');
 const http = require('https');
-const app = express();
+
 const port = process.env.PORT || 8000;
 
+const app = express();
+app.use(cors());
 app.get('*', (req, res) => {
     console.log(req.url);
     try {
